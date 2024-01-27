@@ -62,10 +62,10 @@ Route::post('/login', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Showing chat for the user
-Route::get('/chat', [ChatController::class, 'index']);
+Route::get('/chat', [ChatController::class, 'index'])->middleware('auth');
 
 // Sending user message
-Route::post('/chat/message{user}', [ChatController::class, 'sendChatMessage']);
+Route::post('/chat/message{user}', [ChatController::class, 'sendChatMessage'])->middleware('auth');
 
 // Showing contact form
 Route::get('/contact', [ContactController::class, 'contact']);

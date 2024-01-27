@@ -2,7 +2,7 @@
     <div class="w-screen h-[calc(100vh-17vh)] flex items-center justify-center">
         <div class="w-1/5 h-5/6 bg-orange-600">
             <h2 class="text-2xl px-2 pt-2">Previously chats</h2>
-            <a href="#">
+            <a href="/chat/message/user/2">
                 <div class="w-full h-1/8 bg-gray-600 p-2 my-4 flex gap-x-12 items-center justify-between flex-row-reverse rounded-md hover:bg-gray-700">
                     <div class="bg-black rounded-full h-16 w-16">
                         <img src="" alt="">
@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#">
+            <a href="/chat/message/user/2">
                 <div class="w-full h-1/8 bg-gray-600 p-2 my-4 flex gap-x-12 items-center justify-between flex-row-reverse rounded-md hover:bg-gray-700">
                     <div class="bg-black rounded-full h-16 w-16">
                         <img src="" alt="">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <form action="/chat/message/{{$user}}" method="POST">
+            <form action="/chat/message/{{$user->id}}" method="POST">
                 @csrf
                 <div class="absolute bottom-0 w-full flex">
                     <textarea name="message" id="message" cols="50" rows="2" class="w-full bg-gray-600 pl-2" placeholder="Type your message..."></textarea>
