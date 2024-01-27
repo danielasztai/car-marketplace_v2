@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
-use App\Http\Controllers\ChatController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
@@ -62,10 +62,10 @@ Route::post('/login', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Showing chat for the user
-Route::get('/chat', [ChatController::class, 'index'])->middleware('auth');
+Route::get('/chat', [MessageController::class, 'index'])->middleware('auth');
 
 // Sending user message
-Route::post('/chat/message{user}', [ChatController::class, 'sendChatMessage'])->middleware('auth');
+Route::post('/chat/{user}', [MessageController::class, 'sendChatMessage'])->middleware('auth');
 
 // Showing contact form
 Route::get('/contact', [ContactController::class, 'contact']);

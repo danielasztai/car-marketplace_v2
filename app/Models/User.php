@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function contact() {
         return $this->hasMany(Contact::class, 'user_id');
     }
+
+    public function messages() {
+        return $this->hasMany(Message::class, 'from_user');
+    }
 }
